@@ -1,0 +1,44 @@
+/**
+ * Module dependencies
+ */
+
+@require './variables'
+
+/**
+ * Replace arguments in current-property
+ * with `{base}--` variables, if matching.
+ *
+ * Example:
+ *
+ *   ```stylus
+ *   foo--a = 1px
+ *   foo--b = 2px
+ *   foo--c = 3px
+ *
+ *   foo() { clockwise-mixin('foo', arguments) }
+ *
+ *   html {
+ *     foo: a;
+ *     foo: 10px b;
+ *     foo: a b c;
+ *   }
+ *   ```
+ *
+ *   ```css
+ *   html {
+ *     foo: 1px;
+ *     foo: 10px 2px;
+ *     foo: 1px 2px 3px;
+ *   }
+ *   ```
+ *
+ * @mixin
+ * @opaque
+ */
+
+clockwise--mixin(base)
+  prop = current-property[0]
+  args = current-property[1]
+  for val, i in 0..length(args)
+    args[i] = lookup(base + '--' + args[i]) or args[i]
+  {prop} args

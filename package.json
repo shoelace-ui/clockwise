@@ -1,0 +1,10 @@
+{
+  "name" : "shoelace-ui-clockwise",
+  "version" : "0.1.0",
+  "description" : "Clockwise mixin",
+  "repository" : "https://github.com/shoelace-ui/clockwise.git",
+  "keywords" : ["stylus", "shoelace", "clockwise"],
+  "author" : "Michael Andrew Vanasse <mail@mndvns.com>",
+  "license" : "MIT",
+  "dependencies": {}
+}

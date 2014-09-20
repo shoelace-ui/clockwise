@@ -1,0 +1,25 @@
+@require '../index'
+
+foo()        { clockwise--mixin('foo', arguments) }
+foo-top()    { clockwise--mixin('foo', arguments) }
+foo-bottom() { clockwise--mixin('foo', arguments) }
+foo-left()   { clockwise--mixin('foo', arguments) }
+foo-right()  { clockwise--mixin('foo', arguments) }
+
+foo--a = AAA
+foo--b = BBB
+foo--c = CCC
+foo--d = DDD
+
+html
+
+  foo a
+  foo 1 b
+  foo 1 2 3
+  foo 1 2 3 4
+
+
+  foo-top a
+  foo-bottom b
+  foo-left c
+  foo-right d
