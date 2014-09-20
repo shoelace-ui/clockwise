@@ -36,9 +36,10 @@
  * @opaque
  */
 
-clockwise--mixin(base)
+clockwise--mixin(ns)
   prop = current-property[0]
   args = current-property[1]
-  for val, i in 0..length(args)
-    args[i] = lookup(base + '--' + args[i]) or args[i]
-  {prop} args
+  buf = ()
+  for val, i in 1..length(args)
+    buf[i] = lookup(ns + '--' + args[i]) or args[i]
+  {prop} buf
