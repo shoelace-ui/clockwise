@@ -39,7 +39,9 @@
 clockwise--mixin(ns)
   prop = current-property[0]
   args = current-property[1]
-  buf = ()
-  for val, i in 1..length(args)
+  buf = {}
+  for val, i in 1..(length(args))
     buf[i] = lookup(ns + '--' + args[i]) or args[i]
+  if (match('\.*-[top|bottom|left|right]', prop))
+    buf = buf[0]
   {prop} buf

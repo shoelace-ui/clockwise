@@ -1,6 +1,6 @@
 {
   "name" : "shoelace-ui-clockwise",
-  "version" : "0.1.0",
+  "version" : "0.1.1",
   "description" : "Clockwise mixin",
   "repository" : "https://github.com/shoelace-ui/clockwise.git",
   "keywords" : ["stylus", "shoelace", "clockwise"],
